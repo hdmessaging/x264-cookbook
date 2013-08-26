@@ -23,7 +23,10 @@ default[:x264][:install_method] = :source
 default[:x264][:git_repository] = "git://git.videolan.org/x264"
 default[:x264][:prefix] = "/usr/local"
 default[:x264][:compile_flags] = [
-  "--enable-static"
+  "--enable-static",
+  "--enable-shared",
+  "--extra-cflags=-fPIC",
+  " --extra-asflags=-D__PIC__"
 ]
 
 # JW 07-06-11: Hash of commit or a HEAD should be used - not a tag. Sync action of Git
